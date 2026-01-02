@@ -2,15 +2,22 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        const isActive = hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        // Toggle aria-expanded for accessibility
+        hamburger.setAttribute('aria-expanded', String(isActive));
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
+    if (hamburger) {
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+    }
+    if (navMenu) navMenu.classList.remove('active');
 }));
 
 // Smooth scrolling for navigation links
@@ -27,14 +34,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background change on scroll
+// Navbar background change on scroll (uses CSS variables)
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+    const navbarBg = getComputedStyle(document.documentElement).getPropertyValue('--navbar-bg').trim();
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        navbar.style.background = navbarBg || navbar.style.background;
         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.background = navbarBg || navbar.style.background;
         navbar.style.boxShadow = 'none';
     }
 });
@@ -161,11 +170,11 @@ function showNotification(message, type = 'info') {
 // Typing animation for hero title
 function typeWriter(element, text, speed = 100) {
     let i = 0;
-    element.innerHTML = '';
+    element.textContent = '';
     
     function type() {
         if (i < text.length) {
-            element.innerHTML += text.charAt(i);
+            element.textContent += text.charAt(i);
             i++;
             setTimeout(type, speed);
         }
@@ -178,12 +187,19 @@ function typeWriter(element, text, speed = 100) {
 window.addEventListener('load', () => {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-      const originalText = heroTitle.textContent;
-   // ⚠️ problem here
-        // Add a small delay before starting the animation
-        setTimeout(() => {
-            typeWriter(heroTitle, originalText, 50);
-        }, 500);
+        const highlighted = heroTitle.querySelector('.highlight');
+        if (highlighted) {
+            const name = highlighted.getAttribute('data-name') || highlighted.textContent || '';
+            // Type only the name into the highlight span to avoid overwriting surrounding markup
+            setTimeout(() => {
+                typeWriter(highlighted, name, 45);
+            }, 350);
+        } else {
+            const originalText = heroTitle.textContent.trim();
+            setTimeout(() => {
+                typeWriter(heroTitle, originalText, 50);
+            }, 350);
+        }
     }
 });
 
@@ -216,14 +232,27 @@ document.addEventListener('DOMContentLoaded', () => {
 // Project cards hover effect
 document.addEventListener('DOMContentLoaded', () => {
     const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-15px) scale(1.02)';
+    projectCards.forEach((card, index) => {
+        // 3D tilt effect
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the card
+            const y = e.clientY - rect.top;  // y position within the card
+            const cx = rect.width / 2;
+            const cy = rect.height / 2;
+            const dx = (x - cx) / cx;
+            const dy = (y - cy) / cy;
+            const tiltX = (dy * 6).toFixed(2);
+            const tiltY = (-dx * 6).toFixed(2);
+            card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-6px)`;
         });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
         });
+
+        // Set a default CSS variable for stagger delay (used when animated class is added)
+        card.style.setProperty('--delay', `${index * 0.12}s`);
     });
 });
 
@@ -253,7 +282,7 @@ window.addEventListener('scroll', () => {
 const style = document.createElement('style');
 style.textContent = `
     .nav-link.active {
-        color: #2563eb !important;
+        color: var(--primary) !important;
     }
     .nav-link.active::after {
         width: 100% !important;
@@ -293,3 +322,51 @@ loadingStyle.textContent = `
     }
 `;
 document.head.appendChild(loadingStyle);
+
+// Theme: persistence, OS auto-detect, toggle
+const THEME_KEY = 'theme-preference';
+
+function getPreferredTheme() {
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored === 'light' || stored === 'dark') return stored;
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        toggle.title = theme === 'dark' ? 'Light theme' : 'Dark theme';
+    }
+}
+
+function setTheme(theme) {
+    localStorage.setItem(THEME_KEY, theme);
+    applyTheme(theme);
+}
+
+// Initialize theme on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    applyTheme(getPreferredTheme());
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme') || getPreferredTheme();
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+    }
+});
+
+// Respond to OS theme changes if user hasn't explicitly chosen
+if (window.matchMedia) {
+    const mql = window.matchMedia('(prefers-color-scheme: dark)');
+    mql.addEventListener?.('change', (e) => {
+        const stored = localStorage.getItem(THEME_KEY);
+        if (stored !== 'light' && stored !== 'dark') {
+            applyTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+}

@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vinamr Naik — Java Developer. Backend systems with Spring Boot, MySQL, and strong DSA skills.">
+    <meta name="theme-color" content="#667eea">
     <title>Vinamr Naik - Java Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" integrity="" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Vinamr Naik — Java Developer Portfolio">
+    <meta property="og:description" content="Backend systems with Spring Boot, MySQL, and strong DSA skills.">
+    <meta property="og:image" content="placeholde-jpa.png">
+    <meta property="og:type" content="website">
 </head>
 <body>
+    <a class="skip-link" href="#main" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
                 <span class="logo-text">Vinamr Naik</span>
@@ -32,23 +41,26 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a href="resume/Vinamr_Naik_Resume.pdf" target="_blank" class="nav-link">Resume</a>
+                    <a href="resume/Vinamr_Naik_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
                 </li>
             </ul>
-            <div class="hamburger">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" role="main" aria-labelledby="home-heading">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                   <h1 class="hero-title">Hi, I'm <span class="highlight">Vinamr Naik</span></h1>
+                   <h1 id="home-heading" class="hero-title">Hi, I'm <span class="highlight" data-name="Vinamr Naik"></span></h1>
                     <h2 class="hero-subtitle">Java Developer & Problem Solver</h2>
                     <p class="hero-description">
                         Motivated software developer with expertise in Java, MySQL, and Spring Boot. 
@@ -59,10 +71,10 @@
                         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                     </div>
                     <div class="hero-social">
-                        <a href="https://linkedin.com/in/vinamr-naik" target="_blank" class="social-link">
+                        <a href="https://linkedin.com/in/vinamr-naik" target="_blank" rel="noopener noreferrer" class="social-link">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://github.com/Vinamr007" target="_blank" class="social-link">
+                        <a href="https://github.com/Vinamr007" target="_blank" rel="noopener noreferrer" class="social-link">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="mailto:vinamrnaik206@gmail.com" class="social-link">
@@ -73,7 +85,7 @@
                 <div class="hero-image">
                     <div class="profile-card">
                         <div class="profile-image">
-    <img src="placeholde-jpa.png" alt="Vinamr Naik">
+    <img src="placeholde-jpa.png" alt="Headshot of Vinamr Naik" loading="lazy" width="200" height="200">
 </div>
 
                         <div class="profile-info">
@@ -173,10 +185,10 @@
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/Vinamr007" target="_blank" class="project-link" title="View on GitHub">
+                                <a href="https://github.com/Vinamr007" target="_blank" rel="noopener noreferrer" class="project-link" title="View on GitHub">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
-                                <a href="https://github.com/Vinamr007" target="_blank" class="project-link" title="GitHub Profile">
+                                <a href="https://github.com/Vinamr007" target="_blank" rel="noopener noreferrer" class="project-link" title="GitHub Profile">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -215,10 +227,10 @@
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/Vinamr007" target="_blank" class="project-link" title="View on GitHub">
+                                <a href="https://github.com/Vinamr007" target="_blank" rel="noopener noreferrer" class="project-link" title="View on GitHub">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
-                                <a href="https://github.com/Vinamr007" target="_blank" class="project-link" title="GitHub Profile">
+                                <a href="https://github.com/Vinamr007" target="_blank" rel="noopener noreferrer" class="project-link" title="GitHub Profile">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -291,10 +303,10 @@
                                 <i class="fab fa-java"></i>
                             </div>
                             <div class="cert-content">
-                                <h4>Java (Basic)</h4>
+                                <h4>Java </h4>
                                 <p>HackerRank Certified</p>
                                 <span class="cert-date">Sep 2025</span>
-                                <a href="https://www.hackerrank.com/certificates/c6599d20049f" target="_blank" class="cert-link">View Certificate</a>
+                                <a href="https://www.hackerrank.com/certificates/c6599d20049f" target="_blank" rel="noopener noreferrer" class="cert-link">View Certificate</a>
                             </div>
                         </div>
                         <div class="cert-card">
@@ -302,10 +314,10 @@
                                 <i class="fas fa-database"></i>
                             </div>
                             <div class="cert-content">
-                                <h4>SQL (Basic)</h4>
+                                <h4>SQL </h4>
                                 <p>HackerRank Certified</p>
                                 <span class="cert-date">Sep 2025</span>
-                                <a href="https://www.hackerrank.com/certificates/b52abba55dlc" target="_blank" class="cert-link">View Certificate</a>
+                                <a href="https://www.hackerrank.com/certificates/b52abba55dlc" target="_blank" rel="noopener noreferrer" class="cert-link">View Certificate</a>
                             </div>
                         </div>
                         <div class="cert-card">
@@ -313,10 +325,10 @@
                                 <i class="fas fa-brain"></i>
                             </div>
                             <div class="cert-content">
-                                <h4>Problem Solving (Basic)</h4>
+                                <h4>Problem Solving </h4>
                                 <p>HackerRank Certified</p>
                                 <span class="cert-date">Sep 2025</span>
-                                <a href="https://www.hackerrank.com/certificates/0efd1da4c9f4" target="_blank" class="cert-link">View Certificate</a>
+                                <a href="https://www.hackerrank.com/certificates/0efd1da4c9f4" target="_blank" rel="noopener noreferrer" class="cert-link">View Certificate</a>
                             </div>
                         </div>
                     </div>
@@ -360,15 +372,15 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/vinamr-naik" target="_blank" class="social-btn">
+                        <a href="https://linkedin.com/in/vinamr-naik" target="_blank" rel="noopener noreferrer" class="social-btn">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="https://github.com/Vinamr007" target="_blank" class="social-btn">
+                        <a href="https://github.com/Vinamr007" target="_blank" rel="noopener noreferrer" class="social-btn">
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="resume/Vinamr_Naik_Resume.pdf" target="_blank" class="social-btn">
+                        <a href="resume/Vinamr_Naik_Resume.pdf" target="_blank" rel="noopener noreferrer" class="social-btn">
                             <i class="fas fa-download"></i>
                             <span>Resume</span>
                         </a>
