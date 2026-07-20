@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinamr Naik - Java Developer Portfolio</title>
+    <meta name="description" content="Vinamr Naik - Java Full Stack Developer | Spring Boot | MySQL | Salesforce. Portfolio showcasing Java projects, certifications, and professional experience.">
+    <meta name="keywords" content="Java Developer, Spring Boot, MySQL, Salesforce, Full Stack Developer, Portfolio, Backend Development">
+    <meta name="author" content="Vinamr Naik">
+    <meta name="theme-color" content="#2563EB">
+    <meta property="og:title" content="Vinamr Naik - Java Full Stack Developer">
+    <meta property="og:description" content="Experienced Java Full Stack Developer specializing in Spring Boot, MySQL, and Salesforce">
+    <meta property="og:type" content="website">
+    <title>Vinamr Naik - Java Full Stack Developer | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -23,7 +31,13 @@
                     <a href="#about" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
                     <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#achievements" class="nav-link">Achievements</a>
                 </li>
                 <li class="nav-item">
                     <a href="#education" class="nav-link">Education</a>
@@ -33,6 +47,11 @@
                 </li>
                 <li class="nav-item">
                     <a href="resume/Vinamr_Naik_Resume.pdf" target="_blank" class="nav-link">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </li>
             </ul>
             <div class="hamburger">
@@ -47,44 +66,65 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-text">
+                <div class="hero-text" data-aos="fade-up">
                    <h1 class="hero-title">Hi, I'm <span class="highlight">Vinamr Naik</span></h1>
-                    <h2 class="hero-subtitle">Java Developer & Problem Solver</h2>
+                    <h2 class="hero-subtitle">Java Full Stack Developer</h2>
+                    <p class="hero-tech-stack">Spring Boot | MySQL | Salesforce</p>
                     <p class="hero-description">
-                        Motivated software developer with expertise in Java, MySQL, and Spring Boot. 
-                        Passionate about using Data Structures & Algorithms to build and optimize real-world applications.
+                        B.Tech Information Technology graduate with hands-on experience in Java, Spring Boot, MySQL, Firebase and Salesforce. 
+                        Passionate about building scalable software solutions and solving real-world problems.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="resume/Vinamr_Naik_Resume.pdf" download class="btn btn-primary">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">Hire Me</a>
                     </div>
                     <div class="hero-social">
-                        <a href="https://linkedin.com/in/vinamr-naik" target="_blank" class="social-link">
+                        <a href="https://linkedin.com/in/vinamr-naik" target="_blank" class="social-link" title="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://github.com/Vinamr007" target="_blank" class="social-link">
+                        <a href="https://github.com/Vinamr007" target="_blank" class="social-link" title="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="mailto:vinamrnaik206@gmail.com" class="social-link">
+                        <a href="mailto:vinamrnaik206@gmail.com" class="social-link" title="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-image" data-aos="fade-left">
                     <div class="profile-card">
                         <div class="profile-image">
-    <img src="placeholde-jpa.png" alt="Vinamr Naik">
-</div>
-
+                            <img src="placeholder-jpa.png" alt="Vinamr Naik - Java Developer">
+                        </div>
                         <div class="profile-info">
                             <h3>Vinamr Naik</h3>
-                            <p>Java Developer</p>
+                            <p>Java Full Stack Developer</p>
                             <div class="location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Kolhapur, India</span>
+                                <span>Pune, India</span>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <!-- Hero Stats -->
+            <div class="hero-stats" data-aos="fade-up">
+                <div class="stat-box">
+                    <div class="stat-value">8.2</div>
+                    <div class="stat-text">CGPA</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">3</div>
+                    <div class="stat-text">Projects</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">3</div>
+                    <div class="stat-text">Certifications</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">1</div>
+                    <div class="stat-text">Internship</div>
                 </div>
             </div>
         </div>
@@ -93,23 +133,17 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">About Me</h2>
                 <p class="section-subtitle">Get to know me better</p>
             </div>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-right">
                     <h3>Passionate Developer & Problem Solver</h3>
-                    <p>
-                        I'm a motivated Java developer with a strong foundation in Java and MySQL, 
-                        currently expanding my expertise in Spring Boot and microservices architecture. 
-                        My passion lies in leveraging Data Structures & Algorithms to create efficient, 
-                        scalable solutions for real-world problems.
-                    </p>
-                    <p>
-                        With experience in building secure backend systems and managing complex data operations, 
-                        I enjoy tackling challenging problems and turning ideas into robust applications. 
-                        I'm always eager to learn new technologies and contribute to meaningful projects.
+                    <p class="professional-summary">
+                        B.Tech Information Technology graduate with hands-on experience in Java, Spring Boot, MySQL, Firebase and Salesforce. 
+                        Passionate about building scalable software solutions and solving real-world problems. With strong fundamentals in 
+                        data structures and algorithms, I develop efficient, maintainable code that powers real-world applications.
                     </p>
                     <div class="skills-grid">
                         <div class="skill-category">
@@ -121,41 +155,70 @@
                             </div>
                         </div>
                         <div class="skill-category">
-                            <h4>Technologies</h4>
+                            <h4>Frameworks & Databases</h4>
                             <div class="skill-tags">
                                 <span class="skill-tag">Spring Boot</span>
                                 <span class="skill-tag">MySQL</span>
-                                <span class="skill-tag">Microservices</span>
-                                <span class="skill-tag">Spring AI</span>
+                                <span class="skill-tag">Firebase</span>
+                                <span class="skill-tag">REST APIs</span>
                             </div>
                         </div>
                         <div class="skill-category">
-                            <h4>Tools & IDEs</h4>
+                            <h4>Tools & Platforms</h4>
                             <div class="skill-tags">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">GitHub</span>
+                                <span class="skill-tag">Salesforce</span>
                                 <span class="skill-tag">IntelliJ IDEA</span>
-                                <span class="skill-tag">Eclipse</span>
-                                <span class="skill-tag">VS Code</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-stats">
+                <div class="about-stats" data-aos="fade-left">
                     <div class="stat-item">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Years Learning</div>
+                        <div class="stat-number">8.2</div>
+                        <div class="stat-label">CGPA</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Technologies</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Major Projects</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">3</div>
                         <div class="stat-label">Certifications</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">2</div>
-                        <div class="stat-label">Major Projects</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Salesforce Intern</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">My professional journey and achievements</p>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card" data-aos="fade-up">
+                    <div class="experience-header">
+                        <h3>Software Engineering Intern</h3>
+                        <span class="company-badge">Salesforce</span>
+                    </div>
+                    <p class="experience-date">
+                        <i class="fas fa-calendar-alt"></i> Jun 2025 – Aug 2025
+                    </p>
+                    <ul class="experience-highlights">
+                        <li>Developed cloud applications using Apex and Lightning Web Components (LWC)</li>
+                        <li>Integrated external APIs with Salesforce platform</li>
+                        <li>Automated business processes using Salesforce Flows</li>
+                        <li>Worked on CRM customization and data management</li>
+                        <li>Collaborated with cross-functional teams on real-world projects</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -164,19 +227,57 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Some of my recent work</p>
+                <p class="section-subtitle">Showcasing my technical expertise</p>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <!-- Project 1: Hostel Daily Attendance System -->
+                <div class="project-card" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/Vinamr007" target="_blank" class="project-link" title="View on GitHub">
-                                    <i class="fas fa-external-link-alt"></i>
+                                    <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://github.com/Vinamr007" target="_blank" class="project-link" title="GitHub Profile">
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Hostel Daily Attendance System</h3>
+                        <p class="project-description">
+                            A comprehensive Android application designed for hostel management, featuring real-time attendance tracking, 
+                            role-based authentication, and automated parent notifications.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Android</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        <div class="project-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Role Based Authentication (Admin, Staff, Student)</li>
+                                <li>Real-time Attendance Tracking</li>
+                                <li>Automated Parent Notifications</li>
+                                <li>Leave Management System</li>
+                                <li>Firebase Realtime Database</li>
+                                <li>Secure Data Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2: YouTube Tag Generator -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Vinamr007" target="_blank" class="project-link" title="View on GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -188,15 +289,14 @@
                     <div class="project-content">
                         <h3 class="project-title">YouTube Tag Generator</h3>
                         <p class="project-description">
-                            A comprehensive web application built with Java and Spring Boot that enables users to extract tags and download video thumbnails from YouTube links. 
-                            Features a clean, intuitive frontend and robust RESTful APIs for seamless video data processing.
+                            A comprehensive web application built with Java and Spring Boot that enables users to extract tags and download 
+                            video thumbnails from YouTube links with a clean, intuitive frontend.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">RESTful API</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">REST API</span>
                         </div>
                         <div class="project-features">
                             <h4>Key Features:</h4>
@@ -204,52 +304,126 @@
                                 <li>Extract video tags from YouTube URLs</li>
                                 <li>Download video thumbnails</li>
                                 <li>Clean and intuitive user interface</li>
-                                <li>RESTful API endpoints for data processing</li>
+                                <li>RESTful API endpoints</li>
                                 <li>Spring Boot backend architecture</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                
-                <div class="project-card">
+
+                <!-- Project 3: Bank Management System -->
+                <div class="project-card" data-aos="fade-up">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/Vinamr007" target="_blank" class="project-link" title="View on GitHub">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="https://github.com/Vinamr007" target="_blank" class="project-link" title="GitHub Profile">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="project-placeholder">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-university"></i>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Secure File Hider</h3>
+                        <h3 class="project-title">Bank Management System</h3>
                         <p class="project-description">
-                            A comprehensive backend service built in Java for file encryption, hiding, and secure user management. 
-                            Features complete authentication system with email verification and OTP generation.
+                            A robust banking backend system providing account management, transaction processing, and secure user authentication 
+                            with comprehensive data validation and error handling.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">SMTP</span>
+                            <span class="tech-tag">JDBC</span>
                             <span class="tech-tag">CLI</span>
                         </div>
                         <div class="project-features">
                             <h4>Key Features:</h4>
                             <ul>
-                                <li>File encryption and secure storage</li>
-                                <li>User authentication with OTP verification</li>
+                                <li>User account creation and management</li>
+                                <li>Deposit and withdrawal operations</li>
+                                <li>Balance inquiry and transaction history</li>
+                                <li>Secure authentication system</li>
                                 <li>MySQL database integration</li>
-                                <li>Command-line interface</li>
-                                <li>Email notification system</li>
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Achievements</h2>
+                <p class="section-subtitle">Milestones and recognitions</p>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card" data-aos="zoom-in">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Salesforce Internship</h3>
+                    <p>Software Engineering Intern at Salesforce, working on cloud applications and CRM customization</p>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in">
+                    <div class="achievement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>President - ITESA</h3>
+                    <p>Leading IT students association, organizing technical events and managing student community</p>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in">
+                    <div class="achievement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>CGPA 8.2</h3>
+                    <p>Maintaining excellent academic performance throughout Bachelor's degree</p>
+                </div>
+                <div class="achievement-card" data-aos="zoom-in">
+                    <div class="achievement-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>3 HackerRank Certifications</h3>
+                    <p>Java, SQL, and Problem Solving certifications from HackerRank</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="leadership">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Leadership & Volunteering</h2>
+                <p class="section-subtitle">Contributing to the community</p>
+            </div>
+            <div class="leadership-grid">
+                <div class="leadership-card" data-aos="fade-right">
+                    <div class="leadership-header">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>President - ITESA</h3>
+                    </div>
+                    <ul class="leadership-points">
+                        <li>Organized technical events and workshops</li>
+                        <li>Managed student teams and committees</li>
+                        <li>Mentored junior students in tech topics</li>
+                        <li>Coordinated college-level competitions</li>
+                    </ul>
+                </div>
+                <div class="leadership-card" data-aos="fade-left">
+                    <div class="leadership-header">
+                        <i class="fas fa-heart"></i>
+                        <h3>Volunteer - SORT</h3>
+                    </div>
+                    <ul class="leadership-points">
+                        <li>Handled Mechanical Division in National Level Event</li>
+                        <li>Managed 20+ volunteers effectively</li>
+                        <li>Coordinated technical event execution</li>
+                        <li>Ensured smooth operation and participant satisfaction</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -258,35 +432,48 @@
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Education & Certifications</h2>
-                <p class="section-subtitle">My academic journey and achievements</p>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">My academic journey</p>
             </div>
             <div class="education-content">
-                <div class="education-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>B.Tech in Information Technology</h3>
-                            <h4>Shivaji University Kolhapur</h4>
-                            <span class="timeline-date">2022 - 2026</span>
-                            <p>Currently pursuing Bachelor's degree in Information Technology with focus on software development and system design.</p>
+                <div class="education-grid">
+                    <div class="education-card" data-aos="fade-up">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-details">
+                            <h3>B.Tech Information Technology</h3>
+                            <p class="education-institution">Shivaji University Kolhapur</p>
+                            <p class="education-date">2022 - 2026</p>
+                            <div class="education-meta">
+                                <span class="cgpa-badge">CGPA: 8.2</span>
+                            </div>
+                            <p class="education-description">
+                                Pursuing Bachelor's degree with focus on software development, system design, and modern technologies.
+                            </p>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>HSC (Intermediate in Science)</h3>
-                            <h4>Shivaji University Kolhapur</h4>
-                            <span class="timeline-date">2021 - 2022</span>
-                            <p>Completed higher secondary education with science stream, laying foundation for technical studies.</p>
+                    <div class="education-card" data-aos="fade-up">
+                        <div class="education-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="education-details">
+                            <h3>HSC Science</h3>
+                            <p class="education-institution">Shivaji University Kolhapur</p>
+                            <p class="education-date">2021 - 2022</p>
+                            <p class="education-description">
+                                Completed higher secondary education with science stream, building strong foundation for technical studies.
+                            </p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Certifications -->
                 <div class="certifications">
                     <h3>Professional Certifications</h3>
                     <div class="cert-grid">
-                        <div class="cert-card">
+                        <div class="cert-card" data-aos="fade-up">
                             <div class="cert-icon">
                                 <i class="fab fa-java"></i>
                             </div>
@@ -294,10 +481,12 @@
                                 <h4>Java (Basic)</h4>
                                 <p>HackerRank Certified</p>
                                 <span class="cert-date">Sep 2025</span>
-                                <a href="https://www.hackerrank.com/certificates/c6599d20049f" target="_blank" class="cert-link">View Certificate</a>
+                                <a href="https://www.hackerrank.com/certificates/c6599d20049f" target="_blank" class="cert-link">
+                                    <i class="fas fa-external-link-alt"></i> View Certificate
+                                </a>
                             </div>
                         </div>
-                        <div class="cert-card">
+                        <div class="cert-card" data-aos="fade-up">
                             <div class="cert-icon">
                                 <i class="fas fa-database"></i>
                             </div>
@@ -305,10 +494,12 @@
                                 <h4>SQL (Basic)</h4>
                                 <p>HackerRank Certified</p>
                                 <span class="cert-date">Sep 2025</span>
-                                <a href="https://www.hackerrank.com/certificates/b52abba55dlc" target="_blank" class="cert-link">View Certificate</a>
+                                <a href="https://www.hackerrank.com/certificates/b52abba55dlc" target="_blank" class="cert-link">
+                                    <i class="fas fa-external-link-alt"></i> View Certificate
+                                </a>
                             </div>
                         </div>
-                        <div class="cert-card">
+                        <div class="cert-card" data-aos="fade-up">
                             <div class="cert-icon">
                                 <i class="fas fa-brain"></i>
                             </div>
@@ -316,10 +507,87 @@
                                 <h4>Problem Solving (Basic)</h4>
                                 <p>HackerRank Certified</p>
                                 <span class="cert-date">Sep 2025</span>
-                                <a href="https://www.hackerrank.com/certificates/0efd1da4c9f4" target="_blank" class="cert-link">View Certificate</a>
+                                <a href="https://www.hackerrank.com/certificates/0efd1da4c9f4" target="_blank" class="cert-link">
+                                    <i class="fas fa-external-link-alt"></i> View Certificate
+                                </a>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Hire Me Section -->
+    <section class="why-hire-me">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Why Hire Me?</h2>
+                <p class="section-subtitle">What I bring to your team</p>
+            </div>
+            <div class="hire-grid">
+                <div class="hire-card" data-aos="slide-right">
+                    <div class="hire-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Strong Java Fundamentals</h3>
+                    <p>Solid foundation in Object-Oriented Programming, Data Structures, and Algorithms with practical application experience</p>
+                </div>
+                <div class="hire-card" data-aos="slide-right">
+                    <div class="hire-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Spring Boot Backend Development</h3>
+                    <p>Expertise in building scalable backend systems with Spring Boot, microservices architecture, and RESTful APIs</p>
+                </div>
+                <div class="hire-card" data-aos="slide-right">
+                    <div class="hire-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database Design & Optimization</h3>
+                    <p>Proficient in MySQL database design, query optimization, and data modeling for efficient applications</p>
+                </div>
+                <div class="hire-card" data-aos="slide-left">
+                    <div class="hire-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>REST API Development</h3>
+                    <p>Experience in designing and implementing robust REST APIs with proper error handling and authentication</p>
+                </div>
+                <div class="hire-card" data-aos="slide-left">
+                    <div class="hire-icon">
+                        <i class="fab fa-salesforce"></i>
+                    </div>
+                    <h3>Salesforce Experience</h3>
+                    <p>Hands-on experience with Salesforce platform, Apex, LWC, and CRM customization from professional internship</p>
+                </div>
+                <div class="hire-card" data-aos="slide-left">
+                    <div class="hire-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Leadership Experience</h3>
+                    <p>Proven leadership skills as ITESA President with team management and event organization capabilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Section -->
+    <section id="github" class="github-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">GitHub Activity</h2>
+                <p class="section-subtitle">My open source contributions</p>
+            </div>
+            <div class="github-content" data-aos="fade-up">
+                <div class="github-card">
+                    <div class="github-header">
+                        <i class="fab fa-github"></i>
+                        <h3>GitHub Profile</h3>
+                    </div>
+                    <p>Check out my projects, contributions, and code on GitHub</p>
+                    <a href="https://github.com/Vinamr007" target="_blank" class="github-link">
+                        Visit GitHub Profile <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -328,53 +596,54 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's work together on something amazing</p>
+                <p class="section-subtitle">Let's Build Something Amazing Together</p>
             </div>
             <div class="contact-content">
-                <div class="contact-info">
+                <div class="contact-info" data-aos="fade-right">
                     <h3>Let's Connect</h3>
-                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
+                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out and let's create something amazing together!</p>
                     <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+91 9322486928</p>
-                            </div>
-                        </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>Email</h4>
-                                <p>vinamrnaik206@gmail.com</p>
+                                <p><a href="mailto:vinamrnaik206@gmail.com">vinamrnaik206@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:+919322486928">+91 9322486928</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h4>Location</h4>
-                                <p>Kolhapur, India</p>
+                                <p>Pune, Maharashtra, India</p>
                             </div>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/vinamr-naik" target="_blank" class="social-btn">
+                        <a href="https://linkedin.com/in/vinamr-naik" target="_blank" class="social-btn" title="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="https://github.com/Vinamr007" target="_blank" class="social-btn">
+                        <a href="https://github.com/Vinamr007" target="_blank" class="social-btn" title="GitHub">
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="resume/Vinamr_Naik_Resume.pdf" target="_blank" class="social-btn">
+                        <a href="resume/Vinamr_Naik_Resume.pdf" target="_blank" class="social-btn" title="Download Resume">
                             <i class="fas fa-download"></i>
                             <span>Resume</span>
                         </a>
                     </div>
                 </div>
-                <div class="contact-form">
+                <div class="contact-form" data-aos="fade-left">
+                    <h3>Send Me a Message</h3>
                     <form id="contactForm">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -388,7 +657,11 @@
                         <div class="form-group">
                             <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <div id="formMessage" class="form-message"></div>
                     </form>
                 </div>
             </div>
@@ -399,12 +672,44 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Vinamr Naik. All rights reserved.</p>
-                <p>Built with ❤️ and modern web technologies</p>
+                <div class="footer-section">
+                    <h4>Vinamr Naik</h4>
+                    <p>Java Full Stack Developer</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Me</h4>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/in/vinamr-naik" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Vinamr007" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:vinamrnaik206@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vinamr Naik. All rights reserved.</p>
+                <p>Built using HTML, CSS, and JavaScript</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
